@@ -12,7 +12,9 @@ class CounterExample extends StatefulWidget {
 class _CounterExampleState extends State<CounterExample> {
   @override
   Widget build(BuildContext context) {
-    final counterProvider = Provider.of<CounterProvider>(context);
+    final counterProvider =
+        Provider.of<CounterProvider>(context, listen: false);
+    print('build');
 
     return Scaffold(
       appBar: AppBar(
@@ -20,8 +22,12 @@ class _CounterExampleState extends State<CounterExample> {
         title: const Text('Provider Test'),
       ),
       body: Center(
-        child: Text(counterProvider.count.toString(),
-            style: const TextStyle(fontSize: 50)),
+        child: Consumer<CounterProvider>(builder: (context, value, child) {
+          return Text(
+            value.count.toString(),
+            style: const TextStyle(fontSize: 50),
+          );
+        }),
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
