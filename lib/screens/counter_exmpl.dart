@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:juicebar/provider/counter_provider.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +12,15 @@ class CounterExample extends StatefulWidget {
 }
 
 class _CounterExampleState extends State<CounterExample> {
+  @override
+  void initState() {
+    super.initState();
+    final provider = Provider.of<CounterProvider>(context, listen: false);
+    Timer.periodic(const Duration(seconds: 0), (timer) {
+      provider.setCounter();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final counterProvider =
