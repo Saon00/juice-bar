@@ -23,8 +23,7 @@ class _CounterExampleState extends State<CounterExample> {
 
   @override
   Widget build(BuildContext context) {
-    final counterProvider =
-        Provider.of<CounterProvider>(context, listen: false);
+    final counterProvider = Provider.of<CounterProvider>(context, listen: false);
     print('build');
 
     return Scaffold(

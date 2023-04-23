@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:juicebar/provider/counter_provider.dart';
-import 'package:juicebar/screens/counter_exmpl.dart';
+import 'package:juicebar/provider/example_one_provider.dart';
+import 'package:juicebar/screens/example_one.dart';
 import 'package:provider/provider.dart';
 
 void main(List<String> args) {
-  runApp(const MyApp());
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -17,12 +21,24 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => CounterProvider()),
+          ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
+        ],
+        child: const Scaffold(
+          body: ExampleOneScreen(),
+        ));
+
+    // this one is for single provider
+    /*
     return ChangeNotifierProvider(
       create: (context) => CounterProvider(),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: CounterExample(),
+        home: ExampleOneScreen(),
       ),
     );
+    */
   }
 }
