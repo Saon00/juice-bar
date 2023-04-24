@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:juicebar/provider/example_one_provider.dart';
+import 'package:juicebar/exampleprovider/example_one_provider.dart';
 import 'package:provider/provider.dart';
 
 class ExampleOneScreen extends StatefulWidget {

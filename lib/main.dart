@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:juicebar/provider/counter_provider.dart';
-import 'package:juicebar/provider/example_one_provider.dart';
-import 'package:juicebar/screens/example_one.dart';
+import 'package:juicebar/exampleprovider/counter_provider.dart';
+import 'package:juicebar/exampleprovider/example_one_provider.dart';
+import 'package:juicebar/exmaples/counter_exmpl.dart';
 import 'package:provider/provider.dart';
 
 void main(List<String> args) {
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
           ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
         ],
         child: const Scaffold(
-          body: ExampleOneScreen(),
+          body: CounterExample(),
         ));
 
     // this one is for single provider
