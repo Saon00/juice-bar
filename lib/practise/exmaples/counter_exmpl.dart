@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:juicebar/exampleprovider/counter_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../exampleprovider/counter_provider.dart';
 
 class CounterExample extends StatefulWidget {
   const CounterExample({super.key});

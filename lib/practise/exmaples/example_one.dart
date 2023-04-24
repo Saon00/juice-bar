@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:juicebar/exampleprovider/example_one_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../exampleprovider/example_one_provider.dart';
 
 class ExampleOneScreen extends StatefulWidget {
   const ExampleOneScreen({super.key});

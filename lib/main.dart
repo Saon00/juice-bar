@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:juicebar/exampleprovider/counter_provider.dart';
-import 'package:juicebar/exampleprovider/example_one_provider.dart';
-import 'package:juicebar/exmaples/counter_exmpl.dart';
-import 'package:provider/provider.dart';
+import 'package:juicebar/screens/display_screen.dart';
 
 void main(List<String> args) {
   runApp(const MaterialApp(
@@ -21,6 +18,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    return const Scaffold(
+      body: DisplayScreen(),
+    );
+
+    // this one is for multiple provider
+    /*
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => CounterProvider()),
@@ -29,7 +32,7 @@ class _MyAppState extends State<MyApp> {
         child: const Scaffold(
           body: CounterExample(),
         ));
-
+*/
     // this one is for single provider
     /*
     return ChangeNotifierProvider(
