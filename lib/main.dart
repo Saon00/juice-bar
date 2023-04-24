@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:juicebar/screens/cart_screen.dart';
+import 'package:juicebar/screens/drawer.dart';
 import 'package:juicebar/screens/home_screen.dart';
 import 'package:juicebar/screens/main_navbar_screen.dart';
 
@@ -34,6 +35,20 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MyDrawer(),
+      appBar: AppBar(
+        backgroundColor: Colors.yellow.shade100,
+        elevation: 0,
+        leading: Builder(
+            builder: (context) => IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: const Icon(
+                  Icons.menu_outlined,
+                  color: Colors.grey,
+                ))),
+      ),
       bottomNavigationBar: MainNavBarScreen(
         onTab: (index) => navigateBottomBar(index),
       ),
