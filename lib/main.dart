@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:juicebar/screens/display_screen.dart';
+import 'package:juicebar/screens/cart_screen.dart';
+import 'package:juicebar/screens/home_screen.dart';
+import 'package:juicebar/screens/main_navbar_screen.dart';
 
 void main(List<String> args) {
   runApp(const MaterialApp(
@@ -16,10 +18,26 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int _selectPage = 0;
+
+  final List<Widget> _index = [
+    const HomeScreen(),
+    const CartScreen(),
+  ];
+
+  void navigateBottomBar(int index) {
+    setState(() {
+      _selectPage = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: DisplayScreen(),
+    return Scaffold(
+      bottomNavigationBar: MainNavBarScreen(
+        onTab: (index) => navigateBottomBar(index),
+      ),
+      body: _index[_selectPage],
     );
 
     // this one is for multiple provider
