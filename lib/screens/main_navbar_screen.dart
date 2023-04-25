@@ -10,7 +10,7 @@ class MainNavBarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.yellow.shade100,
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 15),
       child: GNav(
           color: Colors.grey.shade400,
           activeColor: Colors.grey.shade700,
@@ -19,7 +19,7 @@ class MainNavBarScreen extends StatelessWidget {
           tabBackgroundColor: Colors.white,
           backgroundColor: Colors.yellow.shade100,
           tabBorderRadius: 16,
-          gap: 5,
+          gap: 3,
           textStyle: GoogleFonts.varelaRound(fontSize: 15),
           // onTabChange: (value)=> onTab!(value),
           onTabChange: onTab!,
