@@ -37,6 +37,17 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
       drawer: const MyDrawer(),
       appBar: AppBar(
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: IconButton(
+                icon: const Icon(
+                  Icons.notifications_none_rounded,
+                  color: Colors.grey,
+                ),
+                onPressed: () {}),
+          ),
+        ],
         backgroundColor: Colors.yellow.shade100,
         elevation: 0,
         leading: Builder(
