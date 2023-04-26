@@ -4,6 +4,7 @@ import 'package:juicebar/screens/cart_screen.dart';
 import 'package:juicebar/screens/drawer.dart';
 import 'package:juicebar/screens/home_screen.dart';
 import 'package:juicebar/screens/main_navbar_screen.dart';
+import 'package:juicebar/screens/see_all_screen.dart';
 
 void main(List<String> args) {
   runApp(const GetMaterialApp(
@@ -65,6 +66,7 @@ class _MyAppState extends State<MyApp> {
         onTab: (index) => navigateBottomBar(index),
       ),
       body: _index[_selectPage],
+      
     );
 
     // this one is for multiple provider

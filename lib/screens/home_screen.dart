@@ -104,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         onPressed: () {
                           Get.to(const SeeAllScreen());
                         },
-                        child: Text('See all',
+                        child: Text('See all', 
                             style: GoogleFonts.ubuntu(
                                 color: Colors.red.shade300))),
                   ),
