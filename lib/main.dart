@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:juicebar/screens/cart_screen.dart';
 import 'package:juicebar/screens/drawer.dart';
 import 'package:juicebar/screens/home_screen.dart';
 import 'package:juicebar/screens/main_navbar_screen.dart';
 
 void main(List<String> args) {
-  runApp(const MaterialApp(
+  runApp(const GetMaterialApp(
     debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));

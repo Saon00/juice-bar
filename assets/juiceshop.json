@@ -1,0 +1,64 @@
+{
+    "juices": [
+        {
+            "imagePath": "assets/images/orange.png",
+            "juiceName": "Orange Juice",
+            "juiceDescription": "Freshly squeezed orange juice with no added sugar.",
+            "price": 2.50
+        },
+        {
+            "imagePath": "assets/images/apple.png",
+            "juiceName": "Apple Juice",
+            "juiceDescription": "100% pure apple juice with no preservatives.",
+            "price": 2.00
+        },
+        {
+            "imagePath": "assets/images/pineapple.png",
+            "juiceName": "Pineapple Juice",
+            "juiceDescription": "Sweet and tangy pineapple juice with a tropical twist.",
+            "price": 3.00
+        },
+        {
+            "imagePath": "assets/images/cranberry.png",
+            "juiceName": "Cranberry Juice",
+            "juiceDescription": "Tart and refreshing cranberry juice with a boost of Vitamin C.",
+            "price": 2.50
+        },
+        {
+            "imagePath": "assets/images/grapefruit.png",
+            "juiceName": "Grapefruit Juice",
+            "juiceDescription": "Tangy and bitter grapefruit juice with a refreshing taste.",
+            "price": 3.00
+        },
+        {
+            "imagePath": "assets/images/watermelon.png",
+            "juiceName": "Watermelon Juice",
+            "juiceDescription": "Sweet and juicy watermelon juice with a hint of mint.",
+            "price": 3.50
+        },
+        {
+            "imagePath": "assets/images/mango.png",
+            "juiceName": "Mango Juice",
+            "juiceDescription": "Exotic and tropical mango juice with a creamy texture.",
+            "price": 4.00
+        },
+        {
+            "imagePath": "assets/images/stawbery.png",
+            "juiceName": "Strawberry Juice",
+            "juiceDescription": "Sweet and fruity strawberry juice with a burst of flavor.",
+            "price": 2.50
+        },
+        {
+            "imagePath": "assets/images/pomegranate.png",
+            "juiceName": "Pomegranate Juice",
+            "juiceDescription": "Tart and tangy pomegranate juice with antioxidants.",
+            "price": 3.50
+        },
+        {
+            "imagePath": "assets/images/blueberry.jpg",
+            "juiceName": "Blueberry Juice",
+            "juiceDescription": "Rich and flavorful blueberry juice with a deep purple color.",
+            "price": 4.00
+        }
+    ]
+}
