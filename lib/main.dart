@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:juicebar/screens/main_nav_screen.dart';
+import 'package:juicebar/screens/display_screen.dart';
 
 void main(List<String> args) {
   runApp(const GetMaterialApp(
@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const Scaffold(
       // body: DisplayScreen(),
-      body: MainNavScreen(),
+      body: DisplayScreen(),
     );
 
     // this one is for multiple provider
