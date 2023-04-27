@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:juicebar/screens/see_all_screen.dart';
@@ -13,6 +16,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List _list = [];
+
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/juiceshop.json');
+    final data = await json.decode(response);
+    setState(() {
+      _list = data['juices'];
+    });
+  }
+
+  @override
+  void initState() {
+    readJson();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,35 +75,25 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
 
               // recommended widgets
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: const [
-                    RecommendedWidget(
-                      title: 'Apple Juice',
-                      subtitle:
-                          'Apple made with Sugar, Ice, Apple Flavour, Apple Powder, and so on...',
-                      price: '3.55',
-                      img: 'apple.png',
-                    ),
-                    SizedBox(width: 10),
-                    RecommendedWidget(
-                      title: 'Orange Juice',
-                      subtitle:
-                          'Orange made with Sugar, Ice, Apple Flavour, Apple Powder, and so on...',
-                      price: '2.25',
-                      img: 'orange.png',
-                    ),
-                    SizedBox(width: 10),
-                    RecommendedWidget(
-                      title: 'Water Melon Juice',
-                      subtitle:
-                          'Water Melon made with Sugar, Ice, Apple Flavour, Apple Powder, and so on...',
-                      price: '1.90',
-                      img: 'watermelon.png',
-                    ),
-                  ],
-                ),
+              SizedBox(
+                height: 280,
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: _list.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return Row(
+                        children: [
+                          RecommendedWidget(
+                            title: _list[index]['juiceName'],
+                            subtitle: _list[index]['juiceDescription'],
+                            price: _list[index]['price'].toString(),
+                            img: _list[index]['imagePath'],
+                          ),
+                          const SizedBox(width: 10),
+                        ],
+                      );
+                    }),
               ),
               const SizedBox(height: 20),
 
@@ -104,12 +114,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         onPressed: () {
                           Get.to(const SeeAllScreen());
                         },
-                        child: Text('See all', 
+                        child: Text('See all',
                             style: GoogleFonts.ubuntu(
                                 color: Colors.red.shade300))),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

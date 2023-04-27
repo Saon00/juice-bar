@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:juicebar/screens/cart_screen.dart';
-import 'package:juicebar/screens/drawer.dart';
-import 'package:juicebar/screens/home_screen.dart';
-import 'package:juicebar/screens/main_navbar_screen.dart';
-import 'package:juicebar/screens/see_all_screen.dart';
+import 'package:juicebar/screens/main_nav_screen.dart';
 
 void main(List<String> args) {
   runApp(const GetMaterialApp(
@@ -21,52 +17,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int _selectPage = 0;
-
-  final List<Widget> _index = [
-    const HomeScreen(),
-    const CartScreen(),
-  ];
-
-  void navigateBottomBar(int index) {
-    setState(() {
-      _selectPage = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const MyDrawer(),
-      appBar: AppBar(
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: IconButton(
-                icon: const Icon(
-                  Icons.notifications_none_rounded,
-                  color: Colors.grey,
-                ),
-                onPressed: () {}),
-          ),
-        ],
-        backgroundColor: Colors.yellow.shade100,
-        elevation: 0,
-        leading: Builder(
-            builder: (context) => IconButton(
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                icon: const Icon(
-                  Icons.menu_outlined,
-                  color: Colors.grey,
-                ))),
-      ),
-      bottomNavigationBar: MainNavBarScreen(
-        onTab: (index) => navigateBottomBar(index),
-      ),
-      body: _index[_selectPage],
-      
+    return const Scaffold(
+      // body: DisplayScreen(),
+      body: MainNavScreen(),
     );
 
     // this one is for multiple provider

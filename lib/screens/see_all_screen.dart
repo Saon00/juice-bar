@@ -74,38 +74,44 @@ class _SeeAllScreenState extends State<SeeAllScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                SizedBox(
-                                  height: 40,
-                                  child: Image.asset(_list[index]['imagePath']),
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                Row(
                                   children: [
-                                    // name
-                                    Text(
-                                      _list[index]['juiceName'],
-                                      style: GoogleFonts.ubuntu(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
+                                    SizedBox(
+                                      height: 40,
+                                      child: Image.asset(
+                                          _list[index]['imagePath']),
                                     ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-
-                                    // rating & sell counts
-                                    Row(
+                                    const SizedBox(width: 20),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        const Icon(
-                                          Icons.star_outline_rounded,
-                                        ),
+                                        // name
                                         Text(
-                                          '4.5',
+                                          _list[index]['juiceName'],
                                           style: GoogleFonts.ubuntu(
+                                              fontSize: 20,
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        Text(
-                                          '(542)',
-                                          style: GoogleFonts.ubuntu(),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+
+                                        // price
+                                        Row(
+                                          children: [
+                                            Text(
+                                              '\$${_list[index]['price'].toString()}',
+                                              style: GoogleFonts.ubuntu(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+
+                                            // how much sales
+                                            Text(
+                                              '(542)',
+                                              style: GoogleFonts.ubuntu(),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),

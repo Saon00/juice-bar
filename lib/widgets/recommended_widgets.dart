@@ -91,10 +91,10 @@ class RecommendedWidget extends StatelessWidget {
                 top: 15,
                 right: 55,
                 child: CircleAvatar(
-                  backgroundColor: Colors.white,
+                  backgroundColor: Colors.yellow.shade100,
                   maxRadius: 50,
                   child: Image.asset(
-                    'assets/images/$img',
+                    img,
                     height: 70,
                     width: 70,
                   ),

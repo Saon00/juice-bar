@@ -1,53 +1,47 @@
-// To parse this JSON data, do
-//
-//     final itemModel = itemModelFromJson(jsonString);
+class JuiceJson {
+  List<Juices>? juices;
 
-import 'dart:convert';
+  JuiceJson({this.juices});
 
-ItemModel itemModelFromJson(String str) => ItemModel.fromJson(json.decode(str));
+  JuiceJson.fromJson(Map<String, dynamic> json) {
+    if (json['juices'] != null) {
+      juices = <Juices>[];
+      json['juices'].forEach((v) {
+        juices!.add(Juices.fromJson(v));
+      });
+    }
+  }
 
-String itemModelToJson(ItemModel data) => json.encode(data.toJson());
-
-class ItemModel {
-  ItemModel({
-    required this.juices,
-  });
-
-  List<Juice> juices;
-
-  factory ItemModel.fromJson(Map<String, dynamic> json) => ItemModel(
-        juices: List<Juice>.from(json["juices"].map((x) => Juice.fromJson(x))),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "juices": List<dynamic>.from(juices.map((x) => x.toJson())),
-      };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (juices != null) {
+      data['juices'] = juices!.map((v) => v.toJson()).toList();
+    }
+    return data;
+  }
 }
 
-class Juice {
-  Juice({
-    required this.imagePath,
-    required this.juiceName,
-    required this.juiceDescription,
-    required this.price,
-  });
+class Juices {
+  String? imagePath;
+  String? juiceName;
+  String? juiceDescription;
+  double? price;
 
-  String imagePath;
-  String juiceName;
-  String juiceDescription;
-  double price;
+  Juices({this.imagePath, this.juiceName, this.juiceDescription, this.price});
 
-  factory Juice.fromJson(Map<String, dynamic> json) => Juice(
-        imagePath: json["imagePath"],
-        juiceName: json["juiceName"],
-        juiceDescription: json["juiceDescription"],
-        price: json["price"]?.toDouble(),
-      );
+  Juices.fromJson(Map<String, dynamic> json) {
+    imagePath = json['imagePath'];
+    juiceName = json['juiceName'];
+    juiceDescription = json['juiceDescription'];
+    price = json['price'];
+  }
 
-  Map<String, dynamic> toJson() => {
-        "imagePath": imagePath,
-        "juiceName": juiceName,
-        "juiceDescription": juiceDescription,
-        "price": price,
-      };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['imagePath'] = imagePath;
+    data['juiceName'] = juiceName;
+    data['juiceDescription'] = juiceDescription;
+    data['price'] = price;
+    return data;
+  }
 }

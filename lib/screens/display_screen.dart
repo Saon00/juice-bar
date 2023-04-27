@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:juicebar/screens/main_nav_screen.dart';
 
 class DisplayScreen extends StatelessWidget {
   const DisplayScreen({super.key});
@@ -47,7 +49,7 @@ class DisplayScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 50),
                       child: Text(
-                        'One sip. One sip closer to a healthy, happy you.',
+                        'One sip; One sip closer to a healthy, happy you.',
                         style: GoogleFonts.varelaRound(
                             color: Colors.grey, fontSize: 15),
                       ),
@@ -64,11 +66,13 @@ class DisplayScreen extends StatelessWidget {
                           minimumSize: const Size(50, 60),
                           backgroundColor: const Color(0xff362727),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(() => const MainNavScreen());
+                        },
                         child: Text("Let's Drink",
                             style: GoogleFonts.varelaRound()),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

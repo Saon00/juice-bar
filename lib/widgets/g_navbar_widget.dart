@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-class MainNavBarScreen extends StatelessWidget {
+class GNavBarWidget extends StatelessWidget {
   final void Function(int)? onTab;
-  const MainNavBarScreen({super.key, this.onTab});
+  const GNavBarWidget({super.key, this.onTab});
 
   @override
   Widget build(BuildContext context) {
