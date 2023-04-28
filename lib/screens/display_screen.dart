@@ -14,7 +14,7 @@ class DisplayScreen extends StatefulWidget {
 class _DisplayScreenState extends State<DisplayScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 2))
+    Future.delayed(const Duration(seconds: 3))
         .then((value) => Get.to(() => const MainNavScreen()));
     super.initState();
   }

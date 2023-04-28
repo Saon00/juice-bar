@@ -63,6 +63,24 @@ class MyDrawer extends StatelessWidget {
                   ),
                 ),
               ),
+
+              // Coupons button
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.discount_rounded,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      'Coupons',
+                      style: GoogleFonts.ubuntu(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
 
