@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:juicebar/screens/main_nav_screen.dart';
+
+import 'main_nav_screen.dart';
 
 class DisplayScreen extends StatefulWidget {
   const DisplayScreen({super.key});
@@ -14,7 +15,7 @@ class DisplayScreen extends StatefulWidget {
 class _DisplayScreenState extends State<DisplayScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 0))
+    Future.delayed(const Duration(seconds: 3))
         .then((value) => Get.to(() => const MainNavScreen()));
     super.initState();
   }
@@ -22,7 +23,7 @@ class _DisplayScreenState extends State<DisplayScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Colors.green.shade100,
       body: SafeArea(
         child: Center(
           child: Column(
