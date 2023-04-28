@@ -4,8 +4,20 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:juicebar/screens/main_nav_screen.dart';
 
-class DisplayScreen extends StatelessWidget {
+class DisplayScreen extends StatefulWidget {
   const DisplayScreen({super.key});
+
+  @override
+  State<DisplayScreen> createState() => _DisplayScreenState();
+}
+
+class _DisplayScreenState extends State<DisplayScreen> {
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 2))
+        .then((value) => Get.to(() => const MainNavScreen()));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,9 +79,9 @@ class DisplayScreen extends StatelessWidget {
                           backgroundColor: const Color(0xff362727),
                         ),
                         onPressed: () {
-                          Get.to(() => const MainNavScreen());
+                          // Get.to(() => const MainNavScreen());
                         },
-                        child: Text("Let's Drink",
+                        child: Text("Let's Drink 👉",
                             style: GoogleFonts.varelaRound()),
                       ),
                     ),
