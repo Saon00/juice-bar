@@ -12,7 +12,7 @@ class PopularWidgets extends StatelessWidget {
       children: const [
         PopularInsideWidget(
             imgPath: 'assets/images/pomegranate.png',
-            juiceName: 'Pomegranate Juice',
+            juiceName: 'Pomegranate\nJuice',
             juicePrice: '3.50'),
         SizedBox(height: 10),
         PopularInsideWidget(

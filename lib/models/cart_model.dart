@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class JuiceJson with ChangeNotifier{
+class JuiceJson extends ChangeNotifier{
   static List _list = [];
 
   static Future<void> readJson() async {
