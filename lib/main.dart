@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:juicebar/models/cart_model.dart';
 import 'package:juicebar/screens/display_screen.dart';
+import 'package:juicebar/screens/main_nav_screen.dart';
+import 'package:provider/provider.dart';
+
+// void main(List<String> args) {
+//   runApp(const MaterialApp(
+//     debugShowCheckedModeBanner: false,
+//     home: MyApp(),
+//   ));
+// }
 
 void main(List<String> args) {
-  runApp(const GetMaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: MyApp(),
-  ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -19,9 +26,16 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      // body: DisplayScreen(),
-      body: DisplayScreen(),
+    return ChangeNotifierProvider(
+      create: (context) => CartModel(),
+      child: const GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: DisplayScreen(),
+      ),
+      // child: const Scaffold(
+      //   // body: DisplayScreen(),
+      //   body: MainNavScreen(),
+      // ),
     );
 
     // this one is for multiple provider

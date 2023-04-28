@@ -48,6 +48,7 @@ class _SeeAllScreenState extends State<SeeAllScreen> {
         leading: IconButton(
             onPressed: () {
               Get.back();
+              // Navigator.pop(context);
             },
             icon: const Icon(
               Icons.arrow_back_ios_rounded,

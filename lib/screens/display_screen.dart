@@ -13,12 +13,12 @@ class DisplayScreen extends StatefulWidget {
 }
 
 class _DisplayScreenState extends State<DisplayScreen> {
-  @override
-  void initState() {
-    Future.delayed(const Duration(seconds: 3))
-        .then((value) => Get.to(() => const MainNavScreen()));
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   Future.delayed(const Duration(seconds: 3))
+  //       .then((value) => Get.to(() => const MainNavScreen()));
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class _DisplayScreenState extends State<DisplayScreen> {
                           backgroundColor: const Color(0xff362727),
                         ),
                         onPressed: () {
-                          // Get.to(() => const MainNavScreen());
+                          Get.to(() => const MainNavScreen());
                         },
                         child: Text("Let's Drink 👉",
                             style: GoogleFonts.varelaRound()),

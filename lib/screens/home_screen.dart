@@ -79,23 +79,26 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 280,
                 child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: _list.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return Row(
-                        children: [
-                          RecommendedWidget(
-                            title: _list[index]['juiceName'],
-                            subtitle: _list[index]['juiceDescription'],
-                            price: _list[index]['price'].toString(),
-                            img: _list[index]['imagePath'],
-                          ),
-                          const SizedBox(width: 10),
-                        ],
-                      );
-                    }),
+                  shrinkWrap: true,
+                  itemCount: _list.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Row(
+                      children: [
+                        RecommendedWidget(
+                          // title: _list[index]['juiceName'],
+                          title: _list[index]['juiceName'],
+                          subtitle: _list[index]['juiceDescription'],
+                          price: _list[index]['price'].toString(),
+                          img: _list[index]['imagePath'],
+                        ),
+                        const SizedBox(width: 10),
+                      ],
+                    );
+                  },
+                ),
               ),
+
               const SizedBox(height: 20),
 
               // popular drinks
@@ -114,6 +117,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: TextButton(
                         onPressed: () {
                           Get.to(const SeeAllScreen());
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (builder) => const SeeAllScreen()));
                         },
                         child: Text('See all',
                             style: GoogleFonts.ubuntu(
