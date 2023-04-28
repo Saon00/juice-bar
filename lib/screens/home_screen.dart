@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:juicebar/screens/see_all_screen.dart';
+import 'package:juicebar/widgets/popular_widgets.dart';
 
 import '../widgets/recommended_widgets.dart';
 
@@ -121,86 +122,88 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
 
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
-                    itemCount: _list.length ~/ 2,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        color: Colors.green.shade100,
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    height: 40,
-                                    child:
-                                        Image.asset(_list[index]['imagePath']),
-                                  ),
-                                  const SizedBox(width: 20),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      // name
-                                      Text(
-                                        _list[index]['juiceName'],
-                                        style: GoogleFonts.ubuntu(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
+              const PopularWidgets()
 
-                                      // price
-                                      Row(
-                                        children: [
-                                          Text(
-                                            '\$ ${_list[index]['price'].toString()}',
-                                            style: GoogleFonts.ubuntu(
-                                                fontWeight: FontWeight.bold),
-                                          ),
+              // SingleChildScrollView(
+              //   scrollDirection: Axis.vertical,
+              //   child: ListView.builder(
+              //       shrinkWrap: true,
+              //       scrollDirection: Axis.vertical,
+              //       itemCount: _list.length ~/ 2,
+              //       itemBuilder: (context, index) {
+              //         return Card(
+              //           color: Colors.green.shade100,
+              //           child: Padding(
+              //             padding: const EdgeInsets.all(15.0),
+              //             child: Row(
+              //               crossAxisAlignment: CrossAxisAlignment.start,
+              //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //               children: [
+              //                 Row(
+              //                   children: [
+              //                     SizedBox(
+              //                       height: 40,
+              //                       child:
+              //                           Image.asset(_list[index]['imagePath']),
+              //                     ),
+              //                     const SizedBox(width: 20),
+              //                     Column(
+              //                       crossAxisAlignment:
+              //                           CrossAxisAlignment.start,
+              //                       children: [
+              //                         // name
+              //                         Text(
+              //                           _list[index]['juiceName'],
+              //                           style: GoogleFonts.ubuntu(
+              //                               fontSize: 20,
+              //                               fontWeight: FontWeight.bold),
+              //                         ),
+              //                         const SizedBox(
+              //                           height: 10,
+              //                         ),
 
-                                          // how much sales
-                                          // Text(
-                                          //   '(542)',
-                                          //   style: GoogleFonts.ubuntu(),
-                                          // ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.lightGreen.shade600),
-                                child: IconButton(
-                                  icon: const Icon(
-                                    Icons.add,
-                                    color: Colors.white,
-                                  ),
-                                  onPressed: () => {},
-                                ),
-                              )
-                            ],
-                          ),
+              //                         // price
+              //                         Row(
+              //                           children: [
+              //                             Text(
+              //                               '\$${_list[index]['price'].toString()}',
+              //                               style: GoogleFonts.ubuntu(
+              //                                   fontWeight: FontWeight.bold),
+              //                             ),
 
-                          // child: Text(_list[index]['juiceName']),
-                        ),
-                      );
-                    }),
-              ),
+              //                             // how much sales
+              //                             // Text(
+              //                             //   '(542)',
+              //                             //   style: GoogleFonts.ubuntu(),
+              //                             // ),
+              //                           ],
+              //                         ),
+              //                       ],
+              //                     ),
+              //                   ],
+              //                 ),
+              //                 Container(
+              //                   height: 40,
+              //                   width: 40,
+              //                   decoration: BoxDecoration(
+              //                       borderRadius: BorderRadius.circular(10),
+              //                       color: Colors.lightGreen.shade600),
+              //                   child: IconButton(
+              //                     icon: const Icon(
+              //                       Icons.add,
+              //                       color: Colors.white,
+              //                     ),
+              //                     onPressed: () => {},
+              //                   ),
+              //                 )
+              //               ],
+              //             ),
+
+              //             // child: Text(_list[index]['juiceName']),
+              //           ),
+              //         );
+              //       }),
+              // ),
             ],
           ),
         ),
