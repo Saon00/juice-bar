@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:juicebar/constants/colors.dart';
+import 'package:juicebar/constants/text_styles.dart';
 
-import 'main_nav_screen.dart';
+import '../main_nav_screen.dart';
 
 class DisplayScreen extends StatefulWidget {
   const DisplayScreen({super.key});
@@ -53,7 +54,7 @@ class _DisplayScreenState extends State<DisplayScreen> {
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       child: Text(
                         'Fruit Juice',
-                        style: GoogleFonts.varelaRound(
+                        style: onboardingText.copyWith(
                             fontWeight: FontWeight.bold, fontSize: 30),
                       ),
                     ),
@@ -63,8 +64,8 @@ class _DisplayScreenState extends State<DisplayScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 50),
                       child: Text(
                         'One sip; One sip closer to a healthy, happy you.',
-                        style: GoogleFonts.varelaRound(
-                            color: Colors.grey, fontSize: 15),
+                        style:
+                            onboardingText.copyWith(color: grey, fontSize: 15),
                       ),
                     ),
 
@@ -82,8 +83,7 @@ class _DisplayScreenState extends State<DisplayScreen> {
                         onPressed: () {
                           Get.to(() => const MainNavScreen());
                         },
-                        child: Text("Let's Drink 👉",
-                            style: GoogleFonts.varelaRound()),
+                        child: Text("Let's Drink 👉", style: onboardingText),
                       ),
                     ),
                   ],

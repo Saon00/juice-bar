@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:juicebar/screens/see_all_screen.dart';
-import 'package:juicebar/widgets/popular_widgets.dart';
+import 'package:juicebar/constants/text_styles.dart';
+import 'package:juicebar/ui/screens/see_all_screen.dart';
 
+import '../widgets/popular_widgets.dart';
 import '../widgets/recommended_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -46,17 +47,15 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // title
-              Text("Stay Fresh",
-                  style: GoogleFonts.redHatDisplay(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                      color: Colors.grey.shade800)),
+              Text(
+                "Stay Fresh",
+                style: homeScreenBannerText,
+              ),
               // subtitle
-              Text("Any Time Any Where",
-                  style: GoogleFonts.redHatDisplay(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                      color: Colors.grey.shade800)),
+              Text(
+                "Any Time Any Where",
+                style: homeScreenBannerText,
+              ),
 
               // divider
               const Padding(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:juicebar/screens/home_screen.dart';
+import 'package:juicebar/ui/screens/home_screen.dart';
 
+import '../widgets/g_navbar_widget.dart';
 import 'cart_screen.dart';
 import 'drawer.dart';
-import '../widgets/g_navbar_widget.dart';
 
 class MainNavScreen extends StatefulWidget {
   const MainNavScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:juicebar/models/cart_model.dart';
-import 'package:juicebar/screens/display_screen.dart';
+import 'package:juicebar/ui/screens/onboardings/display_screen.dart';
 import 'package:provider/provider.dart';
 
 void main(List<String> args) {

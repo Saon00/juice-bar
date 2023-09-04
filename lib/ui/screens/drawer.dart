@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:juicebar/screens/display_screen.dart';
+import 'package:juicebar/ui/screens/onboardings/display_screen.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
