@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:juicebar/ui/screens/home_screen.dart';
 
 import '../widgets/g_navbar_widget.dart';
-import 'cart_screen.dart';
+import 'cartscreens/cart_screen.dart';
 import 'drawer.dart';
 
 class MainNavScreen extends StatefulWidget {

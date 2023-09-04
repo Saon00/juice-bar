@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:juicebar/constants/text_styles.dart';
+import 'package:juicebar/controllers/cart_controllers.dart';
 import 'package:juicebar/ui/screens/see_all_screen.dart';
 
 import '../widgets/popular_widgets.dart';
@@ -18,6 +19,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // getx cart controller initialize
+  final CartController cartController = Get.put(CartController());
+
   List _list = [];
 
   Future<void> readJson() async {
@@ -70,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.only(bottom: 10),
                 child: Text(
                   'Recommended',
-                  style: GoogleFonts.ubuntu(fontSize: 18),
+                  style: recommendedTitleText,
                 ),
               ),
 
@@ -85,11 +89,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     return Row(
                       children: [
                         RecommendedWidget(
-                          // title: _list[index]['juiceName'],
                           title: _list[index]['juiceName'],
                           subtitle: _list[index]['juiceDescription'],
                           price: _list[index]['price'].toString(),
                           img: _list[index]['imagePath'],
+                          // onTap: cartController.addMoney(_list[index]['price']? '0'),
+                          onTap: () {},
                         ),
                         const SizedBox(width: 10),
                       ],
@@ -108,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.only(bottom: 10),
                     child: Text(
                       'Popular Drinks 🔥',
-                      style: GoogleFonts.ubuntu(fontSize: 18),
+                      style: recommendedTitleText,
                     ),
                   ),
                   Padding(

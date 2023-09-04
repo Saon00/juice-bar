@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../controllers/cart_controllers.dart';
 
 class RecommendedWidget extends StatelessWidget {
   final String title;
   final String subtitle;
   final String price;
   final String img;
-  const RecommendedWidget({
+  final VoidCallback onTap;
+  RecommendedWidget({
     super.key,
     required this.title,
     required this.subtitle,
     required this.price,
     required this.img,
+    required this.onTap,
   });
+
+  // getx cart controller initialize
+  final CartController cartController = Get.put(CartController());
 
   @override
   Widget build(BuildContext context) {
@@ -75,9 +83,7 @@ class RecommendedWidget extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10)),
                               child: IconButton(
                                   color: Colors.white,
-                                  onPressed: () {
-                                    //...........
-                                  },
+                                  onPressed: onTap,
                                   icon: const Icon(Icons.add)),
                             ),
                           ),

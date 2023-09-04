@@ -8,3 +8,5 @@ TextStyle homeScreenBannerText = GoogleFonts.redHatDisplay(
 );
 
 TextStyle onboardingText = GoogleFonts.varelaRound();
+
+TextStyle recommendedTitleText = GoogleFonts.ubuntu(fontSize: 18);
