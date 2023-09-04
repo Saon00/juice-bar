@@ -34,7 +34,7 @@ class _DisplayScreenState extends State<DisplayScreen> {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: SvgPicture.asset(
-                  'assets/refreshing.svg',
+                  'assets/svgs/refreshing.svg',
                   height: 250,
                 ),
               ),
